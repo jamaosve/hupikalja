@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import data from './databig.json';
+import data from './testidata (1).json';
 // import NameForm from './src/Nameform'
 
 
