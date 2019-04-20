@@ -2,7 +2,28 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+// import NameForm from './src/Nameform'
+
+
+
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {value: ''};
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
+
+  handleSubmit(event) {
+    alert('A name was submitted: ' + this.state.value);
+    event.preventDefault();
+  }
+  
   render() {
     return (
       <div className="App">
@@ -14,9 +35,11 @@ class App extends Component {
             maken brancgh 
             jou miten tehää rivinvaihto <p>fsdf</p>
             mä kirjotan vielä tänne jtn
+            vittu on sisiti
             sgsfsf
             teemu testi
           </p>
+          
           <a
             className="App-link"
             href="https://reactjs.org"
@@ -25,8 +48,21 @@ class App extends Component {
           >
             Learn React
           </a>
+          
+          <form onSubmit={this.handleSubmit}>
+        <label>
+          Name:
+          <input type="text" value={this.state.value} onChange={this.handleChange} />
+        </label>
+        <input type="submit" value="Submit" />
+      </form>
+
+
+  
+
         </header>
       </div>
+      
     );
   }
 }
