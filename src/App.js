@@ -44,7 +44,6 @@ class App extends Component {
           >
             Learn React
           </a>
-          
           <form onSubmit={this.handleSubmit}>
         <label>
           Name:
@@ -54,8 +53,7 @@ class App extends Component {
       </form>
 
 
-  
-
+      <p>made by Mukimies, gittimake, teukka27</p>
         </header>
       </div>
       
