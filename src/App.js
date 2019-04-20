@@ -20,8 +20,12 @@ class App extends Component {
   }
 
   handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
+    if (this.state.value.includes("testi")) {
+        
+    alert('Kysymyksesi: ' + this.state.value + '?');
+    }
     event.preventDefault();
+
   }
   
   render() {
@@ -47,14 +51,15 @@ class App extends Component {
           
           <form onSubmit={this.handleSubmit}>
         <label>
-          Name:
+          Kerro huolistasi: 
           <input type="text" value={this.state.value} onChange={this.handleChange} />
         </label>
         <input type="submit" value="Submit" />
       </form>
+      <p>label.this.state.value</p>
 
 
-  
+      
 
         </header>
       </div>
