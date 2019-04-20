@@ -9,7 +9,10 @@ import './App.css';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {value: ''};
+    this.state = {
+      value: '',
+      submittedValue: '',
+    };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -20,11 +23,11 @@ class App extends Component {
   }
 
   handleSubmit(event) {
-    if (this.state.value.includes("testi")) {
-        
-    alert('Kysymyksesi: ' + this.state.value + '?');
-    }
     event.preventDefault();
+
+    this.setState({submittedValue: this.state.value});
+
+
 
   }
   
@@ -56,7 +59,7 @@ class App extends Component {
         </label>
         <input type="submit" value="Submit" />
       </form>
-      <p>label.this.state.value</p>
+      <p>{this.state.submittedValue}</p>
 
 
       
