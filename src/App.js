@@ -60,15 +60,38 @@ class App extends Component {
         <input type="submit" value="Submit" />
       </form>
       <p>{this.state.submittedValue}</p>
-
-
-      
-
         </header>
       </div>
       
     );
-  }
+
+    /*var data; 
+    var jsonData = require('./dump04700-04799.json');
+
+    function loadJSON(jsonfile, callback) {   
+
+        var jsonObj = new XMLHttpRequest();
+        jsonObj.overrideMimeType("App/json");
+        jsonObj.open('GET', "App.js/dump04700-04799.json", true);
+        jsonObj.onreadystatechange = function () {
+              if (jsonObj.readyState == 4 && jsonObj.status == "200") {
+                callback(jsonObj.responseText);
+              }
+        };
+        jsonObj.send(null);  
+     }
+
+    function load() {
+
+        loadJSON(jsonData, function(response) {
+            data = JSON.parse(response);
+            console.log(data);
+        });
+    }
+
+    load();*/
 }
+
+  }
 
 export default App;
