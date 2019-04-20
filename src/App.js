@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-
+import data from './databig.json';
 // import NameForm from './src/Nameform'
 
 
@@ -32,6 +32,7 @@ class App extends Component {
   }
   
   render() {
+    console.log(data);
     return (
       <div className="App">
         <header className="App-header">
