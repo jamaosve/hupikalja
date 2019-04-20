@@ -34,10 +34,6 @@ class App extends Component {
             Kuka siin gitis on???  testimarko dhg oksa gdfgfgd
             maken brancgh 
             jou miten tehää rivinvaihto <p>fsdf</p>
-            mä kirjotan vielä tänne jtn
-            vittu on sisiti
-            sgsfsf
-            teemu testi
           </p>
           
           <a
