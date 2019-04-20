@@ -11,6 +11,7 @@ class App extends Component {
           <p>
             Edit <code>src/App.js</code> and save to edit :D
             Kuka siin gitis on??? >:(
+              makenoksa
           </p>
           <a
             className="App-link"
