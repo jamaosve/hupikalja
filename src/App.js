@@ -32,6 +32,25 @@ class App extends Component {
   }
   
   render() {
+
+    var data = require('./testidata (1).json'); // forward slashes will depend on the file location
+
+    for(var i = 0; i < data.length; i++) {
+        var obj = data[i];
+        console.log("Testi: " + obj.body);
+    }
+
+    var myArray = [
+      "testi1",
+      "testi2",
+      "testi3"
+    ];
+    
+    //var randomItem = myArray[Math.floor(Math.random()*myArray.length)];
+    var randomItem = data[Math.floor(Math.random()*data.length)];
+    
+    //document.body.innerHTML = randomItem;
+
     console.log(data);
     return (
       <div className="App">
@@ -60,19 +79,20 @@ class App extends Component {
         </label>
         <input type="submit" value="Submit" />
       </form>
+
       <p>{this.state.submittedValue}</p>
         </header>
       </div>
       
     );
 
-    var data = require('./testidata (1).json'); // forward slashes will depend on the file location
+    /*var data = require('./testidata (1).json'); // forward slashes will depend on the file location
 
     for(var i = 0; i < data.length; i++) {
         var obj = data[i];
     
         console.log("Testi: " + obj.body);
-    }
+    }*/
 
     /*var data; 
     var jsonData = require('./testidata (1).json');
