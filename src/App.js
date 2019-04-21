@@ -1,17 +1,16 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import data from './testidata (1).json';
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import jsondata from "./testidatapienin.json";
 // import NameForm from './src/Nameform'
-
-
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: '',
-      submittedValue: '',
+      value: "",
+      submittedValue: "",
+      data: jsondata.data
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -19,36 +18,26 @@ class App extends Component {
   }
 
   handleChange(event) {
-    this.setState({value: event.target.value});
+    this.setState({ value: event.target.value });
   }
 
   handleSubmit(event) {
     event.preventDefault();
 
-    this.setState({submittedValue: this.state.value});
-
-
-
+    this.setState({ submittedValue: this.state.value });
   }
-  
+
   render() {
-
-    var data = require('./testidata (1).json'); // forward slashes will depend on the file location
-
-    for(var i = 0; i < data.length; i++) {
-        var obj = data[i];
-        console.log("Testi: " + obj.body);
+    //var data = require('./testidata (1).json'); // forward slashes will depend on the file location
+    var data = this.state.data;
+    for (var i = 0; i < data.length; i++) {
+      var obj = data[i];
+      console.log("Testi: " + obj.body);
     }
-
-    var myArray = [
-      "testi1",
-      "testi2",
-      "testi3"
-    ];
     
     //var randomItem = myArray[Math.floor(Math.random()*myArray.length)];
-    var randomItem = data[Math.floor(Math.random()*data.length)];
-    
+    var randomItem = data[Math.floor(Math.random() * data.length)];
+    console.log("RENDER", randomItem);
     //document.body.innerHTML = randomItem;
 
     console.log(data);
@@ -56,13 +45,27 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to edit 
-            Kuka siin gitis on???  testimarko dhg oksa gdfgfgd
-            maken brancgh 
-            jou miten tehää rivinvaihto <p>fsdf</p>
+          <p style={{ fontSize: "10px" }}>
+            Edit <code>src/App.js</code> and save to edit Kuka siin gitis on???
+            testimarko dhg oksa gdfgfgd maken brancgh jou miten tehää
+            rivinvaihto <p>fsdf</p>
           </p>
-          
+          <form onSubmit={this.handleSubmit}>
+            <label>
+              Kerro huolistasi:
+              <input
+                type="text"
+                value={this.state.value}
+                onChange={this.handleChange}
+              />
+            </label>
+            <input type="submit" value="Submit" />
+          </form>
+
+          <p>{this.state.submittedValue}</p>
+          <p>
+            {randomItem.body}
+          </p>
           <a
             className="App-link"
             href="https://reactjs.org"
@@ -71,19 +74,10 @@ class App extends Component {
           >
             Learn React
           </a>
-          
-          <form onSubmit={this.handleSubmit}>
-        <label>
-          Kerro huolistasi: 
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
 
-      <p>{this.state.submittedValue}</p>
+          
         </header>
       </div>
-      
     );
 
     /*var data = require('./testidata (1).json'); // forward slashes will depend on the file location
@@ -119,8 +113,7 @@ class App extends Component {
     }
 
     load();*/
-}
-
   }
+}
 
 export default App;
