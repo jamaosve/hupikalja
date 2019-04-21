@@ -66,14 +66,22 @@ class App extends Component {
       
     );
 
+    var data = require('./testidata (1).json'); // forward slashes will depend on the file location
+
+    for(var i = 0; i < data.length; i++) {
+        var obj = data[i];
+    
+        console.log("Testi: " + obj.body);
+    }
+
     /*var data; 
-    var jsonData = require('./dump04700-04799.json');
+    var jsonData = require('./testidata (1).json');
 
     function loadJSON(jsonfile, callback) {   
 
         var jsonObj = new XMLHttpRequest();
         jsonObj.overrideMimeType("App/json");
-        jsonObj.open('GET', "App.js/dump04700-04799.json", true);
+        jsonObj.open('GET', "App.js/testidata (1).json", true);
         jsonObj.onreadystatechange = function () {
               if (jsonObj.readyState == 4 && jsonObj.status == "200") {
                 callback(jsonObj.responseText);
