@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
+import logo from "./s24.png";
 import "./App.css";
 import jsondata from "./testidatapienin.json";
 // import NameForm from './src/Nameform'
