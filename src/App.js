@@ -29,10 +29,13 @@ class App extends Component {
 
   render() {
     //var data = require('./testidata (1).json'); // forward slashes will depend on the file location
+    
     var data = this.state.data;
     for (var i = 0; i < data.length; i++) {
       var obj = data[i];
+      //var obj = obj.substring(0, obj.length-4);
       console.log("Testi: " + obj.body);
+      //str = str.substring(0, str.length-4);
     }
     
     //var randomItem = myArray[Math.floor(Math.random()*myArray.length)];
